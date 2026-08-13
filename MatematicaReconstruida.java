@@ -50,4 +50,61 @@ public class MatematicaReconstruida {
         }
         return soma(multiplicacao(a, --b), a);
     }
+    public static int potencia(int a, int b){
+        if(b==0) return 1;
+        if(isNegativo(b)) return potencia(a,modulo(b));
+        return multiplicacao(a,potencia(a,--b));
+    }
+    public static boolean menor(int a, int b){
+        if(a==b) return false;
+        if(isNegativo(a)){
+            if(isNegativo(b)){
+                return menor(modulo(b), modulo(a));
+            } return true;
+        }
+        if(isNegativo(b)) return false;
+        if(b==0) return false;
+        if(a==0) return true;
+        return(menor(--a,--b));
+    }
+    public static boolean menorIgual(int a, int b){
+        if(a==b) return true;
+        if(isNegativo(a)){
+            if(isNegativo(b)){
+                return menor(modulo(b), modulo(a));
+            } return true;
+        }
+        if(isNegativo(b)) return false;
+        if(b==0) return false;
+        if(a==0) return true;
+        return menor(--a,--b);
+    }
+    public static boolean maior(int a, int b){
+        if (a==b) return false;
+        if (isNegativo(a)){
+            if (isNegativo(b)){
+                return maior(modulo(b), modulo(a));
+            }return false;
+        }
+        if (isNegativo(b)) return true;
+        if(a==0) return false;
+        if(b==0) return true;
+        return maior(--a,--b);
+    }
+    public static boolean maiorIgual(int a, int b){
+        if (a==b) return true;
+        if (isNegativo(a)){
+            if (isNegativo(b)){
+                return maior(modulo(b), modulo(a));
+            }return false;
+        }
+        if (isNegativo(b)) return true;
+        if(a==0) return false;
+        if(b==0) return true;
+        return maior(--a,--b);
+    }
+    public static boolean diferente(int a, int b){
+        if (a==b) return false
+        return true
+    }
 }
